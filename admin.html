@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Müəllim Paneli | Sadiq Qurbanov</title>
+    <link rel="icon" href="sadiqmuellim.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">Sadiq <span>Qurbanov</span>.</a>
+                <nav>
+                    <a href="index.html">Ana Səhifə</a>
+                    <a href="exam.html">Sınaq Mərkəzi</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: 140px; padding-bottom: 50px; min-height: 90vh;">
+        
+        <div id="loginArea" style="max-width: 450px; margin: 0 auto;">
+            <div class="card-box" style="text-align: center; border-top: 5px solid var(--gold);">
+                <div style="font-size: 3.5rem; color: var(--gold); margin-bottom: 20px;">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--primary); margin-bottom: 5px;">Müəllim Paneli</h3>
+                <p style="color: var(--text-light); margin-bottom: 30px; font-size: 0.9rem;">Sistemə daxil olmaq üçün təhlükəsizlik şifrəsini yazın.</p>
+                
+                <div style="position: relative;">
+                    <i class="fas fa-lock" style="position: absolute; left: 15px; top: 15px; color: rgba(255,255,255,0.3);"></i>
+                    <input type="password" id="adminPass" placeholder="Şifrə" style="padding-left: 40px;">
+                </div>
+                
+                <button onclick="checkLogin()" class="btn-primary" style="width: 100%; margin-top: 10px;">
+                    <i class="fas fa-sign-in-alt"></i> Daxil Ol
+                </button>
+            </div>
+        </div>
+
+        <div id="adminPanel" class="hidden">
+            <div class="section-header" style="text-align: left; margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px;">
+                <h2>İdarəetmə Paneli</h2>
+                <p>Sınaqları yaradın, redaktə edin və nəticələri izləyin.</p>
+            </div>
+            
+            <div class="admin-grid">
+                
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 20px;"><i class="fas fa-folder-open" style="color: var(--gold);"></i> Mövcud Sınaqlar</h3>
+                    <div id="existingExamsList"></div>
+                </div>
+
+                <div>
+                    <h3 id="formTitle" style="color: var(--primary); margin-bottom: 20px;"><i class="fas fa-plus-circle" style="color: var(--gold);"></i> Yeni Sınaq</h3>
+                    <div class="card-box">
+                        <label style="font-size:0.8rem; color:var(--text-light);">Sınaq Başlığı</label>
+                        <input type="text" id="examTitle" placeholder="Məs: İsim Bölməsi">
+                        
+                        <label style="font-size:0.8rem; color:var(--text-light);">Video İzah Linki (Opsional)</label>
+                        <div style="position: relative; margin-bottom: 15px;">
+                            <i class="fab fa-youtube" style="position: absolute; left: 15px; top: 15px; color: #ff0000;"></i>
+                            <input type="text" id="examVideo" placeholder="https://youtube.com/..." style="padding-left: 40px;">
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px dashed rgba(255,255,255,0.2); margin: 20px 0;">
+                            <h4 style="margin-bottom: 15px; font-size: 1rem; color: var(--primary);">Sualın Məzmunu</h4>
+                            <textarea id="qText" placeholder="Sualı bura yazın..." rows="3"></textarea>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <input type="text" id="optA" placeholder="Variant A">
+                                <input type="text" id="optB" placeholder="Variant B">
+                                <input type="text" id="optC" placeholder="Variant C">
+                                <input type="text" id="optD" placeholder="Variant D">
+                            </div>
+
+                            <label style="font-weight: 600; margin-top: 15px; display: block; color: var(--primary);">Düzgün Cavab:</label>
+                            <select id="correctOpt">
+                                <option value="A">A variantı</option>
+                                <option value="B">B variantı</option>
+                                <option value="C">C variantı</option>
+                                <option value="D">D variantı</option>
+                            </select>
+                            
+                            <div id="addBtnGroup">
+                                <button onclick="addQuestion()" class="btn-outline" style="width: 100%; margin-top: 15px;">
+                                    <i class="fas fa-plus"></i> Sualı Əlavə Et
+                                </button>
+                            </div>
+
+                            <div id="updateBtnGroup" class="hidden" style="display: flex; gap: 10px; margin-top: 15px;">
+                                <button onclick="updateSingleQuestion()" class="btn-primary" style="flex: 2;">
+                                    <i class="fas fa-sync-alt"></i> Sualı Yenilə
+                                </button>
+                                <button onclick="cancelQuestionEdit()" class="btn-outline" style="flex: 1; border-color: var(--error); color: var(--error);">
+                                    <i class="fas fa-times"></i> Ləğv
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="questionsContainer" style="margin-bottom: 20px; color: var(--text-light); font-size: 0.9rem;"></div>
+
+                        <button id="saveExamBtn" onclick="saveExamToDB()" class="btn-primary" style="width: 100%;">
+                             Sınağı Yayımla (Publish)
+                        </button>
+                        
+                        <button id="cancelEditBtn" onclick="resetForm()" class="hidden" style="width: 100%; margin-top: 10px; background: transparent; color: var(--text-light); border: 1px solid rgba(255,255,255,0.2); padding: 10px; border-radius: 8px; cursor: pointer;">
+                            Redaktəni Bitir (Yeni Sınaq Rejiminə Keç)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 60px;">
+                <h3 style="color: var(--primary); margin-bottom: 20px;"><i class="fas fa-chart-bar" style="color: var(--gold);"></i> Şagird Nəticələri</h3>
+                <div class="card-box" style="padding: 0; overflow: hidden;">
+                    <ul id="resultsList" style="list-style: none; padding: 0; margin: 0;"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

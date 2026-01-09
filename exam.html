@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sınaq Mərkəzi | Sadiq Qurbanov</title>
+    
+    <link rel="icon" href="sadiqmuellim.jpg" type="image/jpeg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">Sınaq <span>Mərkəzi</span>.</a>
+                <nav>
+                    <a href="index.html">Ana Səhifə</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: 140px; padding-bottom: 50px; min-height: 90vh;">
+        
+        <div id="studentLogin" style="max-width: 500px; margin: 0 auto;">
+            <div class="card-box" style="text-align: center;">
+                <div style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--primary); margin-bottom: 20px;">İmtahana Giriş</h3>
+                
+                <input type="text" id="studentName" placeholder="Ad və Soyadınızı daxil edin" style="text-align: center; font-size: 1.1rem;">
+                
+                <div style="text-align: left; margin-top: 30px;">
+                    <h4 style="margin-bottom: 15px; color: var(--text-light); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Aktiv Sınaqlar</h4>
+                    <div id="availableExams">
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="examArea" class="hidden" style="max-width: 800px; margin: 0 auto;">
+            
+            <div class="card-box" style="display: flex; justify-content: space-between; align-items: center; padding: 20px; position: sticky; top: 100px; z-index: 900; margin-bottom: 30px; border: 1px solid var(--gold);">
+                <h2 id="displayExamTitle" style="margin: 0; font-size: 1.2rem; color: var(--primary); font-weight: 700;"></h2>
+                <div id="timer"><i class="far fa-clock"></i> 00:00</div>
+            </div>
+            
+            <div id="quizForm">
+                </div>
+            
+            <button id="finishBtn" onclick="finishExam()" class="btn-primary" style="font-size: 1.2rem; padding: 20px; width: 100%;">
+                <i class="fas fa-flag-checkered"></i> İmtahanı Bitir
+            </button>
+            
+            <button id="backToResultsBtn" onclick="showResultsAgain()" class="btn-outline hidden" style="width: 100%; margin-top: 20px;">
+                <i class="fas fa-arrow-left"></i> Nəticələrə Qayıt
+            </button>
+        </div>
+
+        <div id="resultArea" class="hidden" style="max-width: 500px; margin: 0 auto; text-align: center;">
+            <div class="card-box" style="border-top: 5px solid var(--gold);">
+                <div style="font-size: 4rem; color: var(--gold); margin-bottom: 20px; animation: fadeIn 0.5s;">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h2 style="font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 10px;">Nəticəniz</h2>
+                
+                <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <p id="scoreText" style="font-size: 1.3rem; font-weight: 700; color: var(--primary);"></p>
+                    <p id="timeText" style="color: var(--text-light); font-size: 0.9rem; margin-top: 5px;"></p>
+                </div>
+
+                <div id="videoLinkArea" style="margin-bottom: 20px;"></div>
+                
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <button onclick="reviewQuestions()" class="btn-primary">
+                        <i class="fas fa-search"></i> Suallara və Səhvlərə Bax
+                    </button>
+                    <a href="exam.html" class="btn-outline">
+                        Başqa Sınağa Keç
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
