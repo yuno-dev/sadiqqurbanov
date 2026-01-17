@@ -1,331 +1,178 @@
-<!DOCTYPE html>
-<html lang="az">
-
-<head>
+<html lang="az"><head>
+     <link rel="shortcut icon" href="sadiqmuellim.jpg" type="image/x-icon">
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aurahub Premium Store</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sadiq Qurbanov | Azərbaycan Dili və Ədəbiyyatı</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-</head>
-
+    <link rel="stylesheet" href="style.css">
+<style type="text/css" id="operaUserStyle">
+  video {
+    filter: -opera-shader(url(data:text/plain;base64,Ly8gaHR0cHM6Ly9naXRodWIuY29tL0dQVU9wZW4tRWZmZWN0cy9GaWRlbGl0eUZYLUNBUwovLyB2MwoKdW5pZm9ybSBzaGFkZXIgaUNodW5rOwp1bmlmb3JtIGZsb2F0MiBpQ2h1bmtTaXplOwp1bmlmb3JtIGZsb2F0MiBpTW91c2U7CnVuaWZvcm0gZmxvYXQgaUFyZ3NbMV07Cgpjb25zdCBmbG9hdCBFUFNJT04gPSAwLjE7CmNvbnN0IGZsb2F0IFZfTUlOID0gMDsKY29uc3QgZmxvYXQgVl9MT1cgPSAwLjI1Owpjb25zdCBmbG9hdCBWX01FRCA9IDAuNTsKY29uc3QgZmxvYXQgVl9ISUdIID0gMC43NTsKY29uc3QgZmxvYXQgVl9NQVggPSAxOwoKY29uc3QgZmxvYXQgVEhSRVNIT0xEX0FSRUEgPSA4MDAgKiA2MDA7CmNvbnN0IGZsb2F0IE1JTl9BUkVBID0gNDAwICogMTAwOwpjb25zdCBmbG9hdCBNSU5fU1RSSVAgPSAyMDsKY29uc3QgZmxvYXQgTUFSR0lOID0gMTsKCmZsb2F0MyBwaXhlbChpbnQgeCwgaW50IHksIGZsb2F0MiB4eSkgewogICAgcmV0dXJuIGlDaHVuay5ldmFsKHh5ICsgZmxvYXQyKHgsIHkpKS5yZ2I7Cn0KCmZsb2F0MyBzaGFycGVuKGZsb2F0MiB4eSkgewogICAgZmxvYXQzIGYgPQogICAgICAgIHBpeGVsKC0xLCAtMSwgeHkpICogIDEgKwogICAgICAgIHBpeGVsKCAwLCAtMSwgeHkpICogLTEgKwogICAgICAgIHBpeGVsKCAxLCAtMSwgeHkpICogIDEgKwoKICAgICAgICBwaXhlbCgtMSwgMCwgeHkpICogLTEgICsKICAgICAgICBwaXhlbCggMCwgMCwgeHkpICogLTEgICsKICAgICAgICBwaXhlbCggMSwgMCwgeHkpICogLTEgICsKCiAgICAgICAgcGl4ZWwoLTEsIDEsIHh5KSAqIDEgICArCiAgICAgICAgcGl4ZWwoIDAsIDEsIHh5KSAqIC0xICArCiAgICAgICAgcGl4ZWwoIDEsIDEsIHh5KSAqIDE7CiAgICByZXR1cm4gZiAvIC0xOwp9CgpmbG9hdDQgUkdYMihmbG9hdDIgeHkpIHsKICAgIGZsb2F0NCBjb2xvciA9IGlDaHVuay5ldmFsKHh5KTsKCiAgICBpZiAoaUNodW5rU2l6ZS54ICogaUNodW5rU2l6ZS55IDwgTUlOX0FSRUEpIHsKICAgICAgICByZXR1cm4gY29sb3I7CiAgICB9CgogICAgaWYgKGlDaHVua1NpemUueSA8IE1JTl9TVFJJUCB8fCBpQ2h1bmtTaXplLnggPCBNSU5fU1RSSVApIHsKICAgICAgICByZXR1cm4gY29sb3I7CiAgICB9CgogICAgaWYgKHh5LnggPCBNQVJHSU4gfHwgeHkueCA+IChpQ2h1bmtTaXplLnggLSBNQVJHSU4pIHx8CiAgICAgICAgeHkueSA8IE1BUkdJTiB8fCB4eS55ID4gKGlDaHVua1NpemUueSAtIE1BUkdJTikpIHsKICAgICAgICByZXR1cm4gY29sb3I7CiAgICB9CgogICAgcmV0dXJuIGZsb2F0NChzaGFycGVuKHh5KSwgMSk7Cn0KCmZsb2F0IG1pbjMoZmxvYXQgeCwgZmxvYXQgeSwgZmxvYXQgeikgewogICAgcmV0dXJuIG1pbih4LCBtaW4oeSwgeikpOwp9CgpmbG9hdCBtYXgzKGZsb2F0IHgsIGZsb2F0IHksIGZsb2F0IHopIHsKICAgIHJldHVybiBtYXgoeCwgbWF4KHksIHopKTsKfQoKZmxvYXQgcmNwKGZsb2F0IHYpIHsKICAgIHJldHVybiAxIC8gdjsKfQoKZmxvYXQzIFJHWDMoZmxvYXQyIHh5LCBmbG9hdCBzdHJlbmd0aCkgewogICAgZmxvYXQzIGEgPSBwaXhlbCgtMSwgLTEsIHh5KTsKICAgIGZsb2F0MyBiID0gcGl4ZWwoIDAsIC0xLCB4eSk7CiAgICBmbG9hdDMgYyA9IHBpeGVsKCAxLCAtMSwgeHkpOwoKICAgIGZsb2F0MyBkID0gcGl4ZWwoLTEsIDAsIHh5KTsKICAgIGZsb2F0MyBlID0gcGl4ZWwoIDAsIDAsIHh5KTsKICAgIGZsb2F0MyBmID0gcGl4ZWwoIDEsIDAsIHh5KTsKCiAgICBmbG9hdDMgZyA9IHBpeGVsKC0xLCAxLCB4eSk7CiAgICBmbG9hdDMgaCA9IHBpeGVsKCAwLCAxLCB4eSk7CiAgICBmbG9hdDMgaSA9IHBpeGVsKCAxLCAxLCB4eSk7CgogICAgZmxvYXQgbW5SID0gbWluMyhtaW4zKGQuciwgZS5yLCBmLnIpLCBiLnIsIGgucik7CiAgICBmbG9hdCBtbkcgPSBtaW4zKG1pbjMoZC5nLCBlLmcsIGYuZyksIGIuZywgaC5nKTsKICAgIGZsb2F0IG1uQiA9IG1pbjMobWluMyhkLmIsIGUuYiwgZi5iKSwgYi5iLCBoLmIpOwoKICAgIGZsb2F0IG1uUjIgPSBtaW4zKG1pbjMobW5SLCBhLnIsIGMuciksIGcuciwgaS5yKTsKICAgIGZsb2F0IG1uRzIgPSBtaW4zKG1pbjMobW5HLCBhLmcsIGMuZyksIGcuZywgaS5nKTsKICAgIGZsb2F0IG1uQjIgPSBtaW4zKG1pbjMobW5CLCBhLmIsIGMuYiksIGcuYiwgaS5iKTsKCiAgICBtblIgPSBtblIgKyBtblIyOwogICAgbW5HID0gbW5HICsgbW5HMjsKICAgIG1uQiA9IG1uQiArIG1uQjI7CgogICAgZmxvYXQgbXhSID0gbWF4MyhtYXgzKGQuciwgZS5yLCBmLnIpLCBiLnIsIGgucik7CiAgICBmbG9hdCBteEcgPSBtYXgzKG1heDMoZC5nLCBlLmcsIGYuZyksIGIuZywgaC5nKTsKICAgIGZsb2F0IG14QiA9IG1heDMobWF4MyhkLmIsIGUuYiwgZi5iKSwgYi5iLCBoLmIpOwoKICAgIGZsb2F0IG14UjIgPSBtYXgzKG1heDMobXhSLCBhLnIsIGMuciksIGcuciwgaS5yKTsKICAgIGZsb2F0IG14RzIgPSBtYXgzKG1heDMobXhHLCBhLmcsIGMuZyksIGcuZywgaS5nKTsKICAgIGZsb2F0IG14QjIgPSBtYXgzKG1heDMobXhCLCBhLmIsIGMuYiksIGcuYiwgaS5iKTsKCiAgICBteFIgPSBteFIgKyBteFIyOwogICAgbXhHID0gbXhHICsgbXhHMjsKICAgIG14QiA9IG14QiArIG14QjI7CgogICAgZmxvYXQgcmNwTVIgPSByY3AobXhSKTsKICAgIGZsb2F0IHJjcE1HID0gcmNwKG14Ryk7CiAgICBmbG9hdCByY3BNQiA9IHJjcChteEIpOwoKICAgIGZsb2F0IGFtcFIgPSBzYXR1cmF0ZShtaW4obW5SLCAyIC0gbXhSKSAqIHJjcE1SKTsKICAgIGZsb2F0IGFtcEcgPSBzYXR1cmF0ZShtaW4obW5HLCAyIC0gbXhHKSAqIHJjcE1HKTsKICAgIGZsb2F0IGFtcEIgPSBzYXR1cmF0ZShtaW4obW5CLCAyIC0gbXhCKSAqIHJjcE1CKTsKCiAgICBhbXBSID0gc3FydChhbXBSKTsKICAgIGFtcEcgPSBzcXJ0KGFtcEcpOwogICAgYW1wQiA9IHNxcnQoYW1wQik7CgogICAgZmxvYXQgcGVhayA9IC1yY3AobWl4KDgsIDUsIHN0cmVuZ3RoKSk7CgogICAgZmxvYXQgd1IgPSBhbXBSICogcGVhazsKICAgIGZsb2F0IHdHID0gYW1wRyAqIHBlYWs7CiAgICBmbG9hdCB3QiA9IGFtcEIgKiBwZWFrOwoKICAgIGZsb2F0IHJjcFdlaWdodFIgPSByY3AoMSArIDQgKiB3Uik7CiAgICBmbG9hdCByY3BXZWlnaHRHID0gcmNwKDEgKyA0ICogd0cpOwogICAgZmxvYXQgcmNwV2VpZ2h0QiA9IHJjcCgxICsgNCAqIHdCKTsKCiAgICByZXR1cm4gZmxvYXQzKAogICAgICAgIHNhdHVyYXRlKChiLnIgKiB3UiArIGQuciAqIHdSICsgZi5yICogd1IgKyBoLnIgKiB3UiArIGUucikgKiByY3BXZWlnaHRSKSwKICAgICAgICBzYXR1cmF0ZSgoYi5nICogd0cgKyBkLmcgKiB3RyArIGYuZyAqIHdHICsgaC5nICogd0cgKyBlLmcpICogcmNwV2VpZ2h0RyksCiAgICAgICAgc2F0dXJhdGUoKGIuYiAqIHdCICsgZC5iICogd0IgKyBmLmIgKiB3QiArIGguYiAqIHdCICsgZS5iKSAqIHJjcFdlaWdodEIpKTsKfQoKCmZsb2F0NCBtYWluKGZsb2F0MiB4eSkgewoKICAgIGZsb2F0NCBvcmlnaW5hbENvbG9yID0gaUNodW5rLmV2YWwoeHkpOwogICAgaWYgKG9yaWdpbmFsQ29sb3IuYSA8IDEpIHsKICAgICAgICByZXR1cm4gaUNodW5rLmV2YWwoeHkpOwogICAgfQoKICAgIGZsb2F0IGludGVuc2l0eSA9IGlBcmdzWzBdOwogICAgZmxvYXQgc3RyZW5ndGggPSAwOwogICAgZmxvYXQzIGNvbG9yOwoKICAgIGlmIChpbnRlbnNpdHkgPCBWX01JTiArIEVQU0lPTikgewogICAgICAgIHN0cmVuZ3RoID0gMC4xMDsKICAgICAgICBjb2xvciA9IFJHWDMoeHksIHN0cmVuZ3RoKTsKCiAgICB9IGVsc2UgaWYgKGludGVuc2l0eSA+IFZfTE9XIC0gRVBTSU9OICYmIGludGVuc2l0eSA8IFZfTE9XICsgRVBTSU9OKSB7CiAgICAgICAgc3RyZW5ndGggPSAwLjMzOwogICAgICAgIGNvbG9yID0gUkdYMyh4eSwgc3RyZW5ndGgpOwoKICAgIH0gZWxzZSBpZiAoaW50ZW5zaXR5ID4gVl9NRUQgLSBFUFNJT04gJiYgaW50ZW5zaXR5IDwgVl9NRUQgKyBFUFNJT04pIHsKICAgICAgICBzdHJlbmd0aCA9IDAuNTsKICAgICAgICBjb2xvciA9IFJHWDMoeHksIHN0cmVuZ3RoKTsKCiAgICB9IGVsc2UgaWYgKGludGVuc2l0eSA+IFZfSElHSCAtIEVQU0lPTiAmJiBpbnRlbnNpdHkgPCBWX0hJR0ggKyBFUFNJT04pIHsKICAgICAgICBzdHJlbmd0aCA9IDAuOTk7CiAgICAgICAgY29sb3IgPSBSR1gzKHh5LCBzdHJlbmd0aCk7CgogICAgfSBlbHNlIGlmIChpbnRlbnNpdHkgPiBWX01BWCAtIEVQU0lPTikgewogICAgICAgIHN0cmVuZ3RoID0gMTsKICAgICAgICBjb2xvciA9IFJHWDIoeHkpLnJnYjsKICAgIH0KCiAgICByZXR1cm4gZmxvYXQ0KGNvbG9yLCBvcmlnaW5hbENvbG9yLmEpOwp9) -opera-args(0.50 calc(env(-opera-accent-color-r, 255)/255) calc(env(-opera-accent-color-g, 255)/255) calc(env(-opera-accent-color-b, 255)/255)));
+  }
+</style></head>
 <body>
 
-    <div id="toast-container"></div>
-
-    <div id="loading-overlay">
-        <div class="spinner"></div>
-        <p>Yüklənir...</p>
-    </div>
-
-    <div id="auth-section" class="hidden">
-        <div class="auth-wrapper glass-panel">
-            <div style="text-align: right; margin-bottom: 10px;">
-                <span onclick="closeAuth()" style="color: #cbd5e1; cursor: pointer; font-size: 0.9rem;">
-                    <i class="fas fa-times"></i> Mağazaya Qayıt
-                </span>
+    <header>
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">Sadiq <span>Qurbanov</span>.</a>
+                <nav>
+                    <a href="#about">Haqqımda</a>
+                    <a href="#results">Nəticələr</a>
+                    <a href="exam.html" style="color: var(--primary); font-weight: 600;">Sınaqlar </a>
+                    <a href="admin.html">Giriş</a>
+                </nav>
             </div>
-            <img src="logo.jpg" class="brand-logo" alt="Aurahub">
+        </div>
+    </header>
 
-            <div id="login-form-container">
-                <h2 style="color:white; margin-bottom:5px;">Giriş</h2>
-                <form onsubmit="handleAuth(event)">
-                    <label>İstifadəçi Adı</label><input type="text" id="login-username" required>
-                    <label>Şifrə</label><input type="password" id="login-password" required>
-                    <button type="submit" id="btn-login" class="btn-primary">Giriş Et</button>
-                </form>
-                <div class="auth-switch">Hesabın yoxdur? <span onclick="switchAuth('register')">Qeydiyyat</span></div>
+    <section class="hero">
+        <div class="container">
+            <div style="display: flex; align-items: center; flex-wrap: wrap;">
+                <div class="hero-content">
+                    <span class="badge">✨ Eyler Academy - Neftçilər &amp; 20 Yanvar</span>
+                    <h1>Dilimizin Dərinliklərini <i>Peşəkarlarla</i> Kəşf Edin</h1>
+                    <p>Azərbaycan Dili və Ədəbiyyatı üzrə mükəmməl hazırlıq. Tələbələrimizin uğuru bizim vizit kartımızdır. Respublika birincisi olmaq xəyal deyil.</p>
+                    
+                    <div class="cta-group">
+                        <a href="#results" class="btn-primary">Nəticələrimiz</a>
+                        <a href="exam.html" class="btn-outline">Sınaqdan Keç</a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="img-bg-circle"></div>
+                    <div class="img-wrapper">
+                        <img src="sadiqmuellim.jpg" alt="Sadiq Qurbanov">
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div id="register-form-container" class="hidden">
-                <h2 style="color:white; margin-bottom:5px;">Qeydiyyat</h2>
-                <form onsubmit="handleRegister(event)">
-                    <label>İstifadəçi Adı</label><input type="text" id="reg-username" required>
-                    <label>Gmail</label><input type="email" id="reg-email" required placeholder="example@gmail.com">
-                    <label>Şifrə</label><input type="password" id="reg-password" required>
-                    <button type="submit" id="btn-register" class="btn-primary">Qeydiyyatdan Keç</button>
-                </form>
-                <div class="auth-switch">Artıq hesabın var? <span onclick="switchAuth('login')">Giriş Et</span></div>
+    <div class="container">
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-num">10+</div>
+                <div class="stat-desc">İl Təcrübə</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">100%</div>
+                <div class="stat-desc">Qəbul Göstəricisi</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">697.5</div>
+                <div class="stat-desc">Maksimum Bal</div>
             </div>
         </div>
     </div>
 
-    <div id="user-section">
-
-        <nav class="navbar">
-
-            <div class="nav-left">
-                <a href="#" onclick="renderUserHome()" class="nav-brand">
-                    <img src="logo.jpg"> Aurahub
-                </a>
-
-                <div id="mobile-balance-display" onclick="openBalanceModal()" class="mobile-balance hidden-on-desktop">
-                    0.00 ₼
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; color: var(--primary);">Təhsil yalnız öyrətmək deyil, həm də ilham verməkdir.</h2>
+                    <p>Salam, mən <span class="highlight">Sadiq Qurbanov</span>. Azərbaycan Dili və Ədəbiyyatı müəllimi olaraq fəaliyyətim boyunca yüzlərlə şagirdin ali məktəb xəyallarını gerçəkləşdirməsinə dəstək olmuşam.</p>
+                    <p>Hal-hazırda <strong>Eyler Academy</strong>-də (Neftçilər və 20 Yanvar filialları) abituriyent hazırlığı ilə məşğulam. Məqsədim şagirdlərdə sadəcə imtahan vərdişləri deyil, həm də ana dilimizə dərin sevgi və məntiqi yanaşma formalaşdırmaqdır.</p>
                 </div>
-            </div>
-            <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Axtar..." onkeyup="handleSearch(event)">
-            </div>
-
-            <div class="nav-actions">
-                <div id="guest-menu">
-                    <button class="btn-primary" onclick="openAuth()" style="padding: 8px 20px; font-size: 0.9rem;">
-                        <i class="fas fa-sign-in-alt"></i> Giriş Et
-                    </button>
-                </div>
-
-                <div id="user-menu" class="hidden" style="display:flex; align-items:center; gap:15px;">
-                    <div class="balance-display" id="user-balance-display" onclick="openBalanceModal()"
-                        style="cursor:pointer;" title="Balans Artır">
-                        0.00 ₼
-                    </div>
-
-                    <div class="btn-icon" onclick="openUserOrders()" title="Sifarişlərim">
-                        <i class="fas fa-box"></i>
-                    </div>
-
-                    <div class="btn-icon" onclick="openProfileModal()" title="Profil">
-                        <i class="fas fa-user-cog"></i>
-                    </div>
-
-                    <div class="btn-icon" onclick="openCart()" title="Səbət">
-                        <i class="fas fa-shopping-bag"></i>
-                        <span class="badge">0</span>
-                    </div>
-
-                    <div class="btn-icon" onclick="logout()" style="color:red;" title="Çıxış">
-                        <i class="fas fa-power-off"></i>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-        <div id="user-view" style="min-height: 60vh;"></div>
-
-        <footer class="modern-footer">
-            <div class="footer-line"></div>
-
-            <div class="footer-content">
-                <div class="footer-grid">
-
-                    <div class="footer-brand-col">
-                        <div class="footer-logo-wrap">
-                            <img src="logo.jpg" alt="Aurahub">
-                            <span>Aurahub</span>
-                        </div>
-                        <p>
-                            Rəqəmsal dünyanın ən etibarlı ünvanı.
-                            Premium abunəliklər, oyun kodları və
-                            7/24 operativ dəstək xidməti.
-                        </p>
-                        <div class="social-row">
-                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-telegram-plane"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="footer-links-col">
-                        <h4>Menyu</h4>
-                        <ul>
-                            <li onclick="renderUserHome()"><i class="fas fa-chevron-right"></i> Ana Səhifə</li>
-                            <li onclick="openUserOrders()"><i class="fas fa-chevron-right"></i> Sifarişlərim</li>
-                            <li onclick="openCart()"><i class="fas fa-chevron-right"></i> Səbət</li>
-                            <li onclick="openBalanceModal()"><i class="fas fa-chevron-right"></i> Balans Artır</li>
+                <div>
+                    <div style="background: var(--bg-alt); padding: 40px; border-radius: 20px; border-left: 4px solid var(--gold);">
+                        <h4 style="margin-bottom: 15px; color: var(--primary);">Tədris Metodikam:</h4>
+                        <ul style="list-style: none;">
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> İnteraktiv dərs üsulları</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> Həftəlik mövzu sınaqları</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> Fərdi yanaşma və analiz</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section id="results" style="background-color: var(--bg-alt);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Qürur Mənbəyimiz</h2>
+                <p>Doğru strategiya və əzmkarlıqla əldə edilən möhtəşəm nəticələr.</p>
+            </div>
 
-                        <div class="footer-links-col">
-                            <h4>Kömək</h4>
-                            <ul>
-                                <li onclick="openInfoModal('about')"><i class="fas fa-chevron-right"></i> Biz Kimik?
-                                </li>
-                                <li onclick="openInfoModal('terms')"><i class="fas fa-chevron-right"></i> İstifadə
-                                    Qaydaları</li>
-                                <li onclick="openInfoModal('privacy')"><i class="fas fa-chevron-right"></i> Məxfilik
-                                    Siyasəti</li>
-                                <li onclick="openInfoModal('refund')"><i class="fas fa-chevron-right"></i> Geri Qaytarma
-                                </li>
-                            </ul>
+            <div class="results-grid">
+                
+                <div class="result-card top-result">
+                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                        <div>
+                            <div class="student-name">Nihad Aliyev</div>
+                            <div class="student-meta">3-cü qrup | Respublika 1-cisi</div>
                         </div>
+                        <i class="fas fa-crown" style="font-size: 1.5rem; color: var(--gold);"></i>
                     </div>
-
-                    <div class="footer-contact-col">
-                        <h4>Bizimlə Əlaqə</h4>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>support@aurahub.az</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <span>+994 50 123 45 67</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Bakı, Azərbaycan</span>
-                        </div>
+                    <div style="margin-top: 20px;">
+                        <div class="score">697.5</div>
+                        <div class="score-label">Toplanan Bal</div>
                     </div>
                 </div>
 
-                <div class="footer-bottom">
-                    <p>&copy; 2026 <b>Aurahub Enterprise</b>. Bütün hüquqlar qorunur.</p>
-                    <div class="payment-icons">
-                        <i class="fab fa-cc-visa"></i>
-                        <i class="fab fa-cc-mastercard"></i>
-                        <i class="fas fa-credit-card"></i>
+                <div class="result-card">
+                    <div class="student-name">Nihad İbrahimli</div>
+                    <div class="student-meta">Abituriyent</div>
+                    <div style="margin-top: 20px;">
+                        <div class="score">685</div>
+                        <div class="score-label">Toplanan Bal</div>
                     </div>
                 </div>
-            </div>
-        </footer>
 
-    </div>
-
-    <div class="mobile-nav">
-        <div class="nav-item" onclick="renderUserHome()"><i class="fas fa-home"></i><span>Ev</span></div>
-        <div class="nav-item" onclick="handleMobileAction('orders')"><i class="fas fa-box"></i><span>Sifariş</span>
-        </div>
-        <div class="nav-item center-btn" onclick="handleMobileAction('balance')">
-            <div class="plus-btn"><i class="fas fa-plus"></i></div>
-        </div>
-        <div class="nav-item" onclick="handleMobileAction('profile')"><i class="fas fa-user"></i><span>Profil</span>
-        </div>
-        <div class="nav-item" onclick="openCart()"><i class="fas fa-shopping-cart"></i><span
-                class="mobile-badge badge">0</span><span>Səbət</span></div>
-    </div>
-
-    <div id="admin-section" class="hidden">
-        <div class="sidebar">
-            <div class="sidebar-brand">AdminPanel</div>
-            <ul class="menu">
-                <li onclick="renderAdminDashboard()">İcmal</li>
-                <li onclick="renderAdminBalance()">Balans</li>
-                <li onclick="renderAdminProducts()">Məhsullar</li>
-                <li onclick="renderAdminOrders()">Sifariş</li>
-                <li onclick="renderAdminUsers()">Users</li>
-                <li onclick="logout()">Çıxış</li>
-            </ul>
-        </div>
-        <div class="admin-content">
-            <div id="admin-view"></div>
-        </div>
-    </div>
-
-    <div id="dynamic-modal" class="modal-overlay">
-        <div class="modal-box">
-            <span class="close-modal" onclick="closeModal('dynamic-modal')">&times;</span>
-            <div id="dynamic-content"></div>
-        </div>
-    </div>
-
-    <div id="balance-modal" class="modal-overlay">
-        <div class="modal-box" style="width: 500px; max-width: 95%;">
-            <span class="close-modal" onclick="closeModal('balance-modal')">&times;</span>
-            <h2 style="color:white; text-align:center; margin-bottom:20px;">Balans Artır</h2>
-
-            <p style="color:#94a3b8; text-align:center; font-size:0.9rem; margin-bottom:15px;">
-                Aşağıdakı hesablardan birinə ödəniş edin və çeki yükləyin.
-            </p>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
-                <div
-                    style="background: linear-gradient(135deg, #b91c1c, #ef4444); padding:15px; border-radius:12px; color:white;">
-                    <small>KAPITAL BANK</small><br><b>4169 7388...</b>
-                    <button
-                        onclick="navigator.clipboard.writeText('4169738871477638'); showToast('Kopyalandı','success')"
-                        style="width:100%; margin-top:5px; background:rgba(0,0,0,0.2); border:none; color:white; padding:5px; border-radius:5px; cursor:pointer;">Kopyala</button>
+                <div class="result-card">
+                    <div class="student-name">Zəhra Quliyeva</div>
+                    <div class="student-meta">Abituriyent</div>
+                    <div style="margin-top: 20px;">
+                        <div class="score">682.5</div>
+                        <div class="score-label">Toplanan Bal</div>
+                    </div>
                 </div>
-                <div
-                    style="background: linear-gradient(135deg, #059669, #10b981); padding:15px; border-radius:12px; color:white;">
-                    <small>M10</small><br><b>077 763...</b>
-                    <button onclick="navigator.clipboard.writeText('+994777633777'); showToast('Kopyalandı','success')"
-                        style="width:100%; margin-top:5px; background:rgba(0,0,0,0.2); border:none; color:white; padding:5px; border-radius:5px; cursor:pointer;">Kopyala</button>
+
+                <div class="result-card">
+                    <div class="student-name">Nuray Şükürova</div>
+                    <div class="student-meta">Abituriyent</div>
+                    <div style="margin-top: 20px;">
+                        <div class="score">676</div>
+                        <div class="score-label">Toplanan Bal</div>
+                    </div>
                 </div>
-            </div>
 
-            <label style="color:white;">Məbləğ (AZN)</label>
-            <input type="number" id="bal-amount" class="modal-input" placeholder="0.00" style="margin-bottom:10px;">
-
-            <label style="color:white;">Çek Linki</label>
-            <input type="text" id="bal-proof-link" class="modal-input" placeholder="https://..."
-                style="margin-bottom:5px;">
-            <a href="https://imgbb.com" target="_blank"
-                style="color:#6366f1; font-size:0.8rem; display:block; text-align:right; margin-bottom:15px;">Çeki
-                yüklə</a>
-
-            <button class="full-btn" onclick="submitBalanceRequest()">Sorğu Göndər</button>
-        </div>
-    </div>
-
-    <div id="profile-modal" class="modal-overlay">
-        <div class="modal-box" style="width: 400px;">
-            <span class="close-modal" onclick="closeModal('profile-modal')">&times;</span>
-            <h2 style="color:white; text-align:center; margin-bottom: 20px;">Profil</h2>
-
-            <div id="verify-badge"
-                style="padding:10px; margin-bottom:15px; border-radius:10px; text-align:center; color:white; font-weight:bold;">
-            </div>
-
-            <label style="color:white; margin-bottom:5px; display:block;">Mövcud Gmail</label>
-            <div style="display:flex; gap:10px; margin-bottom:10px;">
-                <input type="text" id="profile-email" readonly
-                    style="background:#334155; color:#cbd5e1; flex:1; padding:10px; border-radius:8px; border:none;">
-                <button id="btn-verify-current" class="btn-primary" onclick="verifyCurrentEmail()"
-                    style="width:auto; padding:0 15px; font-size:0.8rem;">Kod Göndər</button>
-            </div>
-
-            <div style="text-align:right; margin-bottom:10px;">
-                <span onclick="toggleChangeEmail()"
-                    style="color:#6366f1; cursor:pointer; font-size:0.8rem; text-decoration:underline;">Gmaili
-                    Dəyiş</span>
-            </div>
-
-            <div id="change-email-section" class="hidden"
-                style="margin-bottom:15px; background:#0f172a; padding:10px; border-radius:10px;">
-                <label style="color:white; margin-bottom:5px; display:block;">Yeni Gmail</label>
-                <div style="display:flex; gap:10px;">
-                    <input type="email" id="new-email" placeholder="Yeni gmail..."
-                        style="background:#1e293b; border:1px solid #334155; color:white; padding:10px; border-radius:8px; flex:1;">
-                    <button class="btn-primary" onclick="updateEmail()" style="width:auto; white-space:nowrap;">Kod
-                        Al</button>
+                <div class="result-card">
+                    <div class="student-name">Fidan Qurbanova</div>
+                    <div class="student-meta">Abituriyent</div>
+                    <div style="margin-top: 20px;">
+                        <div class="score">666.5</div>
+                        <div class="score-label">Toplanan Bal</div>
+                    </div>
                 </div>
-            </div>
 
-            <div id="verify-section" class="hidden" style="margin-bottom:20px;">
-                <label style="color:#10b981; margin-bottom:5px; display:block;">Təsdiq Kodu</label>
-                <div style="display:flex; gap:10px;">
-                    <input type="number" id="verify-code" placeholder="Kodu yazın..."
-                        style="background:#0f172a; border:1px solid #10b981; color:white; padding:10px; border-radius:8px; flex:1; text-align:center; letter-spacing:2px;">
-                    <button class="full-btn" onclick="verifyCode()"
-                        style="background:#10b981; width:auto;">Təsdiqlə</button>
+                <div class="result-card">
+                    <div class="student-name">Əsmər Əliyeva</div>
+                    <div class="student-meta">Abituriyent</div>
+                    <div style="margin-top: 20px;">
+                        <div class="score">661</div>
+                        <div class="score-label">Toplanan Bal</div>
+                    </div>
                 </div>
-            </div>
 
-            <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid #334155;">
-                <button onclick="logout()"
-                    style="width:100%; padding:12px; border-radius:10px; border:1px solid #ef4444; background:rgba(239, 68, 68, 0.1); color:#ef4444; font-weight:bold; cursor:pointer; transition:0.3s; display:flex; align-items:center; justify-content:center; gap:10px;">
-                    <i class="fas fa-sign-out-alt"></i> Hesabdan Çıxış Et
-                </button>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div id="delivery-modal" class="modal-overlay">
-        <div class="modal-box">
-            <span class="close-modal" onclick="closeModal('delivery-modal')">&times;</span>
-            <input type="hidden" id="del-order-id">
-            <textarea id="del-text" placeholder="Kodu bura yazın..." rows="5"
-                style="width:100%; margin-bottom:10px;"></textarea>
-            <button class="full-btn" onclick="submitDelivery()">Göndər</button>
+    <footer>
+        <div class="container">
+            <h3>Sadiq Qurbanov</h3>
+            <p>Gələcəyinizi peşəkarlara əmanət edin.</p>
+            <div style="margin-top: 30px; font-size: 0.9rem;">
+                © 2026 Bütün hüquqlar qorunur.
+            </div>
         </div>
-    </div>
+    </footer>
 
-    <script src="script.js"></script>
-</body>
 
-</html>
+
+
+</body></html>
