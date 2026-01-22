@@ -349,22 +349,40 @@ function finishExam() {
 }
 
 function reviewQuestions() {
+    if (!currentExam) return; // Əgər imtahan yoxdursa, heç nə etmə (Xətanı önləyir)
+
     document.getElementById('resultArea').classList.add('hidden');
     document.getElementById('examArea').classList.remove('hidden');
     document.getElementById('finishBtn').classList.add('hidden');
     document.getElementById('backToResultsBtn').classList.remove('hidden');
     document.getElementById('timer').innerHTML = "Baxış";
+
     currentExam.questions.forEach((q, index) => {
-        const card = document.getElementById(`qCard-${index}`);
+        const card = document.getElementById('qCard-' + index);
+        if (!card) return; // Kart tapılmasa davam et
+
         card.classList.add('reviewed');
+        
+        // Şagirdin seçdiyi cavabı tap
         const selectedInput = document.querySelector(`input[name="q${index}"]:checked`);
+        
+        // Düzgün cavabın etiketini (label) tap və yaşıl et
         const correctLabel = document.getElementById(`label-${index}-${q.correct}`);
         if (correctLabel) correctLabel.classList.add('correct-answer');
-        if (selectedInput && selectedInput.value !== q.correct) {
+
+        // Şagirdin cavabını yoxla
+        if (selectedInput) {
+            if (selectedInput.value !== q.correct) {
+                card.classList.add('wrong-card');
+                const wrongLabel = document.getElementById(`label-${index}-${selectedInput.value}`);
+                if (wrongLabel) wrongLabel.classList.add('wrong-answer');
+            } else {
+                card.classList.add('correct-card');
+            }
+        } else {
+            // Əgər şagird heç nə seçməyibsə, kartı qırmızı et (Boş buraxılıb)
             card.classList.add('wrong-card');
-            document.getElementById(`label-${index}-${selectedInput.value}`).classList.add('wrong-answer');
-        } else if (selectedInput) { card.classList.add('correct-card'); }
-        else { card.classList.add('wrong-card'); }
+        }
     });
 }
 
